@@ -48,6 +48,7 @@ add_image <- function(file) {
 
   # Create the image URI
   uri <- knitr::image_uri(f = file)
+  write(uri, file = file.path("/tmp", cid))
 
   glue::glue("<img cid=\"{cid}\" src=\"{uri}\" width=\"520\"/>\n")
 }
